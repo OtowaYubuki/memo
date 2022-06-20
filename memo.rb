@@ -13,6 +13,7 @@
       memo_contents = gets.chomp
       csv << ["#{memo_contents}"]
       input = STDIN.gets
+    end
     elsif memo_type == 2
       puts "編集したいファイルを入力してください"
       file = gets.chomp
@@ -22,6 +23,7 @@
       memo_contents = gets.chomp
       csv << ["#{memo_contents}"] 
       input = STDIN.gets
+    end
     else
       puts "1か2を選択してください"
     end

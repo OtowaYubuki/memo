@@ -1,4 +1,4 @@
-  require "csv"
+require "csv"
  
     puts "1(新規でメモを作成) 2(既存のメモ編集する)"
  
@@ -10,9 +10,8 @@
       CSV.open("#{file}.csv","w") do |csv| 
       puts "メモしたい内容を記入してください"
       puts "完了したらCtrl+Dを押します"
-      memo_contents = gets.chomp
+      memo_contents = STDIN.readlines
       csv << ["#{memo_contents}"]
-      input = STDIN.gets
     end
     elsif memo_type == 2
       puts "編集したいファイルを入力してください"
@@ -20,11 +19,9 @@
       CSV.open("#{file}.csv", "a") do |csv|
       puts "メモしたい内容を記入してください"
       puts "完了したらCtrl+Dを押します"
-      memo_contents = gets.chomp
+      memo_contents = STDIN.readlines
       csv << ["#{memo_contents}"] 
-      input = STDIN.gets
     end
     else
       puts "1か2を選択してください"
     end
-    
